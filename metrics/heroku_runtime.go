@@ -100,7 +100,7 @@ func (m *HerokuRuntimeMetrics) UpdateFromLog(log *herokuLog.HerokuLog) {
 		return
 	}
 
-	labels := []string{log.AppName, log.Dyno, log.ValueOrUnknown("source")}
+	labels := []string{log.AppName, log.Dyno, log.Dyno}
 
 	if strings.HasPrefix(log.Line, "State changed") {
 		if strings.HasSuffix(log.Line, "to down") {
